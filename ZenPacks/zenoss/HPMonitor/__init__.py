@@ -21,6 +21,23 @@ if os.path.isdir(skinsDir):
 
 from Products.ZenModel.ZenPack import ZenPackBase
 
+# --------------------------------------------------
+# The 2.1.x HPMonitor zenpack overrides the remove()
+# method.  In 2.2 the ZenPack.remove() method
+# gained a 3rd parameter and the code was not
+# backwards compatible with older method sigs.
+# This monkeypatch fixes that problem when user
+# is upgrading to 2.2
+def betterRemove(self, app, leaveObjects=False):
+    self.cleanupOurPlugins(app.zport.dmd)
+    ZenPackBase.remove(self, app, leaveObjects)
+try:
+    import Products.HPMonitor
+    Products.HPMonitor.ZenPack.remove = betterRemove
+except ImportError:
+    pass
+# --------------------------------------------------
+
 class ZenPack(ZenPackBase):
     """ HPMonitor loader
     """
