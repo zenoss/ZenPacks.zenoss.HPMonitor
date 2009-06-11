@@ -11,8 +11,10 @@
 #
 ###########################################################################
 
-from Products.DataCollector.plugins.CollectorPlugin import SnmpPlugin, \
-        GetTableMap
+from Products.DataCollector.plugins.CollectorPlugin \
+    import SnmpPlugin, GetTableMap
+from Products.DataCollector.plugins.zenoss.snmp.CpuMap \
+    import getManufacturerAndModel
 
 class HPCPUMap(SnmpPlugin):
     """Map HP/Compaq insight manager cpu table to model."""
@@ -53,6 +55,7 @@ class HPCPUMap(SnmpPlugin):
         for cpu in cputable.values():
             del cpu['null']
             om = self.objectMap(cpu)
+            om.setProductKey = getManufacturerAndModel(om.setProductKey)
             idx = getattr(om, 'socket', om._cpuidx)
             om.id = self.prepId("%s_%s" % (om.setProductKey,idx))
             cpumap[cpu['_cpuidx']] = om

@@ -12,6 +12,8 @@
 ###########################################################################
 
 from Products.DataCollector.plugins.CollectorPlugin import SnmpPlugin, GetMap
+from Products.DataCollector.plugins.DataMaps import MultiArgs
+import re
 
 class HPDeviceMap(SnmpPlugin):
     """Map mib elements from HP Insight Manager mib to get hw and os products.
@@ -32,6 +34,13 @@ class HPDeviceMap(SnmpPlugin):
         getdata, tabledata = results
         if getdata['setHWProductKey'] is None: return None
         om = self.objectMap(getdata)
+        om.setHWProductKey = MultiArgs(om.setHWProductKey, "HP")
+
         if om.setOSProductKey and om.setOSProductKey.find("NetWare") > -1:
             delattr(om, 'setOSProductKey')
+        else:
+            if re.search(r'Microsoft', om.setOSProductKey, re.I):
+                om.setOSProductKey = MultiArgs(om.setOSProductKey, "Microsoft")
+            elif re.search(r'Red\s*Hat', om.setOSProductKey, re.I):
+                om.setOSProductKey = MultiArgs(om.setOSProductKey, "RedHat")
         return om
