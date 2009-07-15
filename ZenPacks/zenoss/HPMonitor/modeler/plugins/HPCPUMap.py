@@ -11,6 +11,10 @@
 #
 ###########################################################################
 
+__doc__ = """HPCPUMap
+Gather HP/Compaq System Insight Manager processor information.
+"""
+
 from Products.DataCollector.plugins.CollectorPlugin \
     import SnmpPlugin, GetTableMap
 from Products.DataCollector.plugins.zenoss.snmp.CpuMap \

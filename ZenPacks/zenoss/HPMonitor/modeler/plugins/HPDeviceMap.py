@@ -11,6 +11,11 @@
 #
 ###########################################################################
 
+__doc__ = """HPDeviceMap
+Use HP Insight Manager to determine hardware model + serial number as well
+as OS information.
+"""
+
 from Products.DataCollector.plugins.CollectorPlugin import SnmpPlugin, GetMap
 from Products.DataCollector.plugins.DataMaps import MultiArgs
 import re
