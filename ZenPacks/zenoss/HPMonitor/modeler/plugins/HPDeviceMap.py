@@ -39,6 +39,8 @@ class HPDeviceMap(SnmpPlugin):
         getdata, tabledata = results
         if getdata['setHWProductKey'] is None: return None
         om = self.objectMap(getdata)
+        if om.setHWSerialNumber:
+            om.setHWSerialNumber = om.setHWSerialNumber.strip()
         om.setHWProductKey = MultiArgs(om.setHWProductKey, "HP")
 
         if om.setOSProductKey and om.setOSProductKey.find("NetWare") > -1:
