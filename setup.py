@@ -17,7 +17,7 @@ AUTHOR = 'Zenoss'
 LICENSE = ''
 NAMESPACE_PACKAGES = ['ZenPacks', 'ZenPacks.zenoss']
 PACKAGES = ['ZenPacks', 'ZenPacks.zenoss', 'ZenPacks.zenoss.HPMonitor']
-INSTALL_REQUIRES = []
+INSTALL_REQUIRES = ['Zenoss >= 2.3.70']
 COMPAT_ZENOSS_VERS = '>=2.3.70'
 PREV_ZENPACK_NAME = 'HPMonitor'
 # STOP_REPLACEMENTS
