@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+   <title>HPMonitor</title>
+   <topicref href="topics/HPMonitor.dita">
+      <topicref href="topics/HPMonitor_ref-Prerequisites.dita"/>
+      <topicref href="topics/HPMonitor_task-Enable-Enhanced-Modeling.dita"/>
+      <topicref href="topics/HPMonitor_ref-Daemons.dita"/>
+   </topicref>
+</map>

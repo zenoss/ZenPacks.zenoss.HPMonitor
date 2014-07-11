@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>(HPMonitor) HP Monitor</title>
+  <shortdesc>The <zenpack>ZenPacks.zenoss.HPMonitor</zenpack> ZenPack provides customized modeling of devices running
+    HP Insight Management Agents, and includes identification for proprietary HP hardware.</shortdesc>
+  <refbody>
+    <section><p>The following information is collected through SNMP:</p><ul>
+          <li>
+            <p>Hardware Model</p>
+          </li>
+          
+          <li>
+            <p>Hardware Serial Number</p>
+          </li>
+          
+          <li>
+            <p>Operating System</p>
+          </li>
+          
+          <li>
+            <p>CPU Information (socket, speed, cache)</p>
+          </li>
+        </ul>
+    </section>
+  </refbody>
+</reference>

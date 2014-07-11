@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="d31e108"><title>Enable Enhanced Modeling</title><taskbody><context><p>To enable enhanced modeling:</p></context><steps-informal><ol>
+      <li>
+        <p>Select Infrastructure from the navigation bar.</p>
+      </li>
+
+      <li>
+        <p>Click the device name in the device list.</p>
+
+        <p>The device overview page appears.</p>
+      </li>
+
+      <li>
+        <p>Select Modeler Plugins from the left panel.</p>
+      </li>
+
+      <li>
+        <p>Click Add Fields to reveal the list of available plugins.</p>
+      </li>
+
+      <li>
+        <p>Select the following available plugins and drag them to the
+        plugins list:</p>
+
+        <ul>
+          <li>
+            <p>HPCpuMap</p>
+          </li>
+
+          <li>
+            <p>HPDeviceMap</p>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <p>Remove the following plugins by clicking the 'X' button to the
+        right of the plugin:</p>
+
+        <ul>
+          <li>
+            <p>zenoss.snmp.CPUMap</p>
+          </li>
+
+          <li>
+            <p>zenoss.snmp.DeviceMap</p>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <p>Click <b>Save</b>.</p>
+      </li>
+
+      <li>
+        <p>Remodel the device using the new plugins. To do this, select
+        Model Device from the Action menu.</p>
+      </li>
+    </ol></steps-informal></taskbody></task>
